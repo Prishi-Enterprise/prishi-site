@@ -20,9 +20,13 @@ Only add a product after the owner explicitly approves displaying it. Edit `src/
 
 ## Deploy on Vercel
 
+Live: [prishi.in](https://prishi.in), which redirects to [www.prishi.in](https://www.prishi.in). Vercel project: [prishi-site](https://vercel.com/prishi-ai/prishi-site), connected to this repository. Pushes to `main` deploy automatically. The deployment was verified on 22 September 2026.
+
+GoDaddy `www` CNAME points to `788750508dad2be5.vercel-dns-017.com`. The existing apex 301 forwarding to `https://www.prishi.in` remains in place, so `www` is the canonical host in metadata and the sitemap. Mail and Festivals DNS records are unchanged. `prishi.in` is also assigned to the Vercel project for a possible future direct-apex migration; Vercel can show that unused direct mapping as unconfigured while the GoDaddy redirect is active. Do not redirect `www` back to the apex while the existing apex forwarding remains, as that would create a loop.
+
 Import this repository, select **Other** as the framework, and use Node.js 24. `vercel.json` sets the build command (`npm run build`) and output directory (`dist`). No environment variables are needed. Each push to the production branch can deploy automatically through the Git integration.
 
-Add `prishi.in` in the Vercel project’s Domains settings, then use the exact DNS records Vercel provides. Add `www.prishi.in` as a redirect to the apex if desired. Preserve all mail records and existing product subdomains, including `festivals.prishi.in`. The Google Sites DNS entry for the root can be replaced only when the new deployment is verified and ready for cutover.
+For a future direct-apex migration, first prepare and verify Vercel’s recommended A record, replace GoDaddy forwarding, and then update canonical metadata and sitemap URLs. Preserve all mail records and existing product subdomains, including `festivals.prishi.in`.
 
 The generated `dist/` directory is also portable to any static host. This repository is maintained independently of the private parent venture workspace.
 
