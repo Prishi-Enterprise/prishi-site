@@ -2,7 +2,7 @@
 
 The public portfolio for **prishi.in**. A fast, responsive static site with no browser JavaScript, accounts, tracking, or runtime services. Festivals is the first approved product.
 
-Public repository: [shivambhavsar/prishi-site](https://github.com/shivambhavsar/prishi-site). The owner plans to transfer it later. After transfer, update this link and the local Git remote, and reconnect the repository in Vercel if required.
+Public repository: [Prishi-Enterprise/prishi-site](https://github.com/Prishi-Enterprise/prishi-site). This repository is independently maintained under the Prishi organization.
 
 ## Local development
 
