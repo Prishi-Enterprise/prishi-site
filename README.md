@@ -2,6 +2,8 @@
 
 The public portfolio for **prishi.in**. A fast, responsive static site with no browser JavaScript, accounts, tracking, or runtime services. Festivals is the first approved product.
 
+Public repository: [shivambhavsar/prishi-site](https://github.com/shivambhavsar/prishi-site). The owner plans to transfer it later. After transfer, update this link and the local Git remote, and reconnect the repository in Vercel if required.
+
 ## Local development
 
 Requires Node.js 22 or later. No dependencies or secrets are required.
