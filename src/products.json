@@ -1,0 +1,15 @@
+[
+  {
+    "id": "festivals",
+    "approved": true,
+    "name": "Festivals",
+    "category": "COMMUNITY & CELEBRATIONS",
+    "headline": "Less coordinating.\nMore celebrating.",
+    "description": "A shared home for your community’s celebrations. Bring collections, expenses, meals, and festival planning together in one place.",
+    "url": "https://festivals.prishi.in",
+    "domain": "festivals.prishi.in",
+    "image": "/assets/festivals.webp",
+    "imageAlt": "A glowing diya surrounded by marigolds and warm festival lights",
+    "tags": ["Festival planning", "Community management"]
+  }
+]
