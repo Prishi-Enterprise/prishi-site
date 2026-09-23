@@ -26,8 +26,9 @@ const cards = products
   .map(
     (
       p,
+      index,
     ) => `<article class="product-card" aria-labelledby="${escape(p.id)}-title">
-  <div class="product-image"><img src="${escape(p.image)}" alt="${escape(p.imageAlt)}" width="1200" height="800" loading="eager" /><div class="image-shade"></div><span class="image-label"><span class="live-dot" aria-hidden="true"></span> LIVE PRODUCT</span><span class="image-caption">BRINGING COMMUNITIES TOGETHER</span></div>
+  <div class="product-image"><img src="${escape(p.image)}" alt="${escape(p.imageAlt)}" width="1200" height="800" loading="${index === 0 ? "eager" : "lazy"}" /><div class="image-shade"></div><span class="image-label"><span class="live-dot" aria-hidden="true"></span> ${escape(p.status ?? "LIVE PRODUCT")}</span><span class="image-caption">${escape(p.caption ?? p.name)}</span></div>
   <div class="product-content"><p class="product-category">${escape(p.category)}</p><h3 id="${escape(p.id)}-title">${escape(p.name)}</h3><p class="product-headline">${escape(p.headline)}</p><p class="product-description">${escape(p.description)}</p><ul class="tags" aria-label="Product features">${p.tags.map((tag) => `<li>${escape(tag)}</li>`).join("")}</ul><div class="product-action"><small>${escape(p.domain)}</small><a class="product-link" href="${escape(p.url)}">Explore ${escape(p.name)} <span aria-hidden="true">↗</span></a></div></div>
 </article>`,
   )

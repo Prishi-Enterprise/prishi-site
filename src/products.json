@@ -10,6 +10,23 @@
     "domain": "festivals.prishi.in",
     "image": "/assets/festivals.webp",
     "imageAlt": "A glowing diya surrounded by marigolds and warm festival lights",
+    "status": "LIVE PRODUCT",
+    "caption": "BRINGING COMMUNITIES TOGETHER",
     "tags": ["Festival planning", "Community management"]
+  },
+  {
+    "id": "trading-lab",
+    "approved": true,
+    "name": "Trading Lab",
+    "category": "RESEARCH & DECISION SUPPORT",
+    "headline": "Evidence first.\nCapital protected.",
+    "description": "A transparent, read-only view of Prishi’s paper-trading experiment—daily checks, signals, risk limits, and outcomes in one place.",
+    "url": "https://prishi-trading-lab.vercel.app",
+    "domain": "prishi-trading-lab.vercel.app",
+    "image": "/assets/trading-lab.svg",
+    "imageAlt": "An abstract market chart with measured price movement and risk boundaries",
+    "status": "LIVE EXPERIMENT",
+    "caption": "RESEARCHING MARKETS WITH DISCIPLINE",
+    "tags": ["Paper trading", "Risk controls"]
   }
 ]
