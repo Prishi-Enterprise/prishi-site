@@ -1,4 +1,5 @@
 import { readFile, mkdir, rm, cp, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -33,8 +34,11 @@ const cards = products
 </article>`,
   )
   .join("\n");
+const styles = await readFile(path.join(root, "src/styles.css"), "utf8");
+const stylesheet = `styles.${createHash("sha256").update(styles).digest("hex").slice(0, 12)}.css`;
 const template = await readFile(path.join(root, "src/index.html"), "utf8");
 const html = template
+  .replace("{{STYLESHEET}}", stylesheet)
   .replace("{{PRODUCTS}}", cards)
   .replace(
     "{{PRODUCT_COUNT}}",
@@ -46,7 +50,7 @@ await mkdir(path.join(root, "dist"), { recursive: true });
 await cp(path.join(root, "public"), path.join(root, "dist"), {
   recursive: true,
 });
-await cp(path.join(root, "src/styles.css"), path.join(root, "dist/styles.css"));
+await writeFile(path.join(root, "dist", stylesheet), styles);
 await writeFile(path.join(root, "dist/index.html"), html);
 console.log(
   `Built Prishi portfolio with ${products.length} approved product(s).`,
