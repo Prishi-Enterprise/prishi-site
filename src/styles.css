@@ -219,6 +219,12 @@ h2 {
   position: absolute;
   transition: transform 0.7s;
 }
+.product-card[data-product="trading-lab"] .product-image {
+  background: #101a24;
+}
+.product-card[data-product="trading-lab"] .product-image img {
+  object-fit: contain;
+}
 .product-card:hover .product-image img {
   transform: scale(1.035);
 }
@@ -456,13 +462,17 @@ h2 {
   .product-content {
     padding: 30px 27px;
   }
+  .product-card {
+    grid-template-columns: 1fr;
+  }
   .product-action {
-    align-items: start;
-    flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .product-image {
-    min-height: 470px;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
   }
   .about {
     grid-template-columns: 1fr 2fr;
@@ -551,7 +561,7 @@ h2 {
     grid-template-columns: 1fr;
   }
   .product-image {
-    min-height: 280px;
+    min-height: 0;
     aspect-ratio: 1.5;
   }
   .product-content {
